@@ -1,16 +1,105 @@
-# React + Vite
+# Financial Trainer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive personal portfolio website built using **React.js**, **Tailwind CSS**, **Framer Motion**, and **Spline 3D**.  
+It showcases the experience, skills, and achievements of a professional accountant and financial trainer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo  
+[Live site](https://pandurangan-portfolio.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Modern UI/UX** — Clean, responsive, and visually appealing design  
+- **Framer Motion Animations** — Smooth scroll-based and entry animations  
+- **3D Elements with Spline** — Interactive 3D visuals integrated seamlessly  
+- **Fully Responsive** — Optimized for desktop, tablet, and mobile devices  
+- **Clickable Social Links** — Direct links to WhatsApp, Instagram, and Facebook  
+- **Professional Sections**:
+  - Hero Section (Introduction)
+  - About Section (Personal Overview)
+  - Experience Timeline (Career Journey)
+  - Skills Section
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js** | Frontend Framework |
+| **Tailwind CSS** | Styling & Layout |
+| **Framer Motion** | Animations |
+| **Spline 3D** | 3D Interactive Models |
+| **Vite** / **CRA** | Build Tool |
+
+---
+
+## Folder Structure
+
+```
+
+📦 portfolio
+┣ 📂 src
+┃ ┣ 📂 components
+┃ ┃ ┣ 📜 HeroSection.jsx
+┃ ┃ ┣ 📜 About.jsx
+┃ ┃ ┣ 📜 ExperienceTimeline.jsx
+┃ ┃ ┣ 📜 SkillsSection.jsx
+┃ ┃ 
+┃ ┣ 📜 App.jsx
+┃ ┣ 📜 main.jsx
+┣ 📜 package.json
+┣ 📜 tailwind.config.js
+┣ 📜 README.md
+┗ 📜 index.html
+
+````
+
+---
+
+## Installation & Setup
+
+1. **Clone the repository**
+   
+   git clone https://github.com/yourusername/financial-trainer-portfolio.git
+
+
+2. **Navigate to the project folder**
+
+   ```bash
+   cd financial-trainer-portfolio
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
+
+## 📸 Preview
+
+*Add a screenshot or GIF of your website here.*
+
+
+## 📜 License
+
+This project is licensed under the **MIT License** — you can freely use and modify it with credit.
+
+---
+
