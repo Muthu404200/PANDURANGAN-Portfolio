@@ -30,7 +30,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-gray-900 text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8"
+      className="min-h-screen bg-black text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8"
     >
       {/* Left Side: Image */}
       <motion.div

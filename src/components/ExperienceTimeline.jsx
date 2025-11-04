@@ -58,7 +58,7 @@ const ExperienceTimeline = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-900 py-16 lg:py-24">
+    <section id="experience" className="bg-black py-16 lg:py-24">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-left">
           <h2 className="text-4xl font-bold text-white">

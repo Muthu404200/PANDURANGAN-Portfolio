@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="lg:grid lg:min-h-screen lg:place-content-center bg-gray-900"
+      className="lg:grid lg:min-h-screen lg:place-content-center bg-black"
     >
       <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
         {/* Left Content */}

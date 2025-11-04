@@ -101,38 +101,12 @@ export default function Navbar() {
                   </span>
                 </div>
 
-        {/* <ul className="py-2 text-gray-200">
-        {[
-            { name: "Email", link: "mailto:pandurangan6@gmail.com" },
-            { name: "Whatsapp", link: "https://wa.me/919876543210" },
-            { name: "Instagram", link: "https://www.instagram.com/yourusername" },
-        ].map(({ name, link }) => (
-            <motion.li
-            key={name}
-            whileHover={{
-                backgroundColor: "#4F46E5",
-                color: "#fff",
-                x: 5,
-            }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            >
-            <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 text-sm"
-            >
-                {name}
-            </a>
-            </motion.li>
-        ))}
-        </ul> */}
+        
 
 
 <ul className="py-2 text-gray-200">
   {[
     { name: "Whatsapp", link: "https://wa.me/917358403005" },
-    { name: "Instagram", link: "https://www.instagram.com/yourusername" },
     { name: "Email", link: "mailto:pandurangan6@gmail.com" },
   ].map(({ name, link }) => (
     <motion.li
