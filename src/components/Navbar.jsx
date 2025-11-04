@@ -17,25 +17,16 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Framer Motion Variants
+  // Animation Variants
   const dropdownVariants = {
     hidden: { opacity: 0, y: -15, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 220,
-        damping: 20,
-      },
+      transition: { type: "spring", stiffness: 220, damping: 20 },
     },
-    exit: {
-      opacity: 0,
-      y: -10,
-      scale: 0.97,
-      transition: { duration: 0.15 },
-    },
+    exit: { opacity: 0, y: -10, scale: 0.97, transition: { duration: 0.15 } },
   };
 
   const mobileMenuVariants = {
@@ -43,39 +34,28 @@ export default function Navbar() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 160,
-        damping: 18,
-      },
+      transition: { type: "spring", stiffness: 160, damping: 18 },
     },
-    exit: {
-      opacity: 0,
-      y: -15,
-      transition: { duration: 0.2 },
-    },
+    exit: { opacity: 0, y: -15, transition: { duration: 0.2 } },
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 text-white bg-gray-900 shadow-md border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full text-white bg-black shadow-md border-b border-gray-800 overflow-visible">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <a href="#" className="flex items-center space-x-3">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            PANDURANGAN
-          </span>
+          <span className="text-2xl font-semibold">PANDURANGAN</span>
         </a>
 
         {/* Right side */}
-        <div className="flex items-center md:order-2 space-x-3" ref={userMenuRef}>
-          {/* User avatar */}
+        <div className="flex items-center md:order-2 space-x-3 relative" ref={userMenuRef}>
+          {/* Avatar */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
             type="button"
             className="flex text-sm bg-black rounded-full focus:ring-4 focus:ring-indigo-500"
           >
-            <span className="sr-only">Open user menu</span>
             <motion.img
               whileHover={{ scale: 1.05, rotate: 2 }}
               transition={{ type: "spring", stiffness: 200 }}
@@ -85,7 +65,7 @@ export default function Navbar() {
             />
           </motion.button>
 
-          {/* User dropdown */}
+          {/* Dropdown (won’t cause scrollbar now) */}
           <AnimatePresence>
             {isUserMenuOpen && (
               <motion.div
@@ -93,7 +73,7 @@ export default function Navbar() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="absolute right-4 top-14 w-48 z-50 rounded-lg shadow bg-black divide-y divide-gray-600 cursor-pointer"
+                className="absolute right-0 top-14 w-48 z-50 rounded-lg shadow-lg bg-black divide-y divide-gray-700"
               >
                 <div className="px-4 py-3">
                   <span className="block text-sm font-medium text-white">
@@ -101,48 +81,42 @@ export default function Navbar() {
                   </span>
                 </div>
 
-        
-
-
-<ul className="py-2 text-gray-200">
-  {[
-    { name: "Whatsapp", link: "https://wa.me/917358403005" },
-    { name: "Email", link: "mailto:pandurangan6@gmail.com" },
-  ].map(({ name, link }) => (
-    <motion.li
-      key={name}
-      whileHover={{
-        backgroundColor: "#4F46E5",
-        color: "#fff",
-        x: 5,
-      }}
-      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-    >
-      <a
-        href={link}
-        target={name === "Email" ? "_self" : "_blank"}
-        rel={name === "Email" ? undefined : "noopener noreferrer"}
-        className="block px-4 py-2 text-sm"
-      >
-        {name}
-      </a>
-    </motion.li>
-  ))}
-</ul>
-
-
+                <ul className="py-2 text-gray-200">
+                  {[
+                    { name: "Whatsapp", link: "https://wa.me/917358403005" },
+                    { name: "Email", link: "mailto:pandurangan6@gmail.com" },
+                  ].map(({ name, link }) => (
+                    <motion.li
+                      key={name}
+                      whileHover={{
+                        backgroundColor: "#4F46E5",
+                        color: "#fff",
+                        x: 5,
+                      }}
+                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                    >
+                      <a
+                        href={link}
+                        target={name === "Email" ? "_self" : "_blank"}
+                        rel={name === "Email" ? undefined : "noopener noreferrer"}
+                        className="block px-4 py-2 text-sm"
+                      >
+                        {name}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu toggle */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden text-gray-400 hover:bg-gray-700"
           >
             {isMenuOpen ? (
-              // X icon
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -154,14 +128,9 @@ export default function Navbar() {
                 animate={{ rotate: 90 }}
                 transition={{ duration: 0.2 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </motion.svg>
             ) : (
-              // Menu icon
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -183,7 +152,7 @@ export default function Navbar() {
           </motion.button>
         </div>
 
-        {/* Desktop menu */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex md:w-auto md:order-1">
           <ul className="flex flex-row space-x-8 font-medium">
             {["Home", "About", "Skills", "Experience"].map((item) => (
@@ -204,7 +173,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -212,7 +181,7 @@ export default function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="md:hidden bg-indigo-900 border-t border-indigo-800"
+            className="md:hidden bg-indigo-900 border-t border-indigo-800 w-full"
           >
             <ul className="flex flex-col font-medium p-4 space-y-2">
               {["Home", "About", "Skills", "Experience"].map((item, i) => (
@@ -229,7 +198,7 @@ export default function Navbar() {
                         ? "bg-black text-indigo-500"
                         : "text-white hover:bg-gray-700 hover:text-indigo-400"
                     }`}
-                    onClick={() => setIsMenuOpen(false)} // close on click
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
                   </a>

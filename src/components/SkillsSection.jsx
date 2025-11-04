@@ -28,9 +28,10 @@ const SkillsSection = () => {
 
   return (
     <section
-      id="skills"
-      className="min-h-screen w-full md:px-8 xl:px-20 bg-black text-white bg-primary flex items-center"
-    >
+  id="skills"
+  className="min-h-screen w-full md:px-8 xl:px-20 bg-black text-white flex items-center overflow-x-hidden"
+>
+
       <div className="flex container flex-col md:flex-row items-center md:items-start gap-16 w-full">
         
         {/* Left Section */}

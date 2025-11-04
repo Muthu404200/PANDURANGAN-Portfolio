@@ -29,9 +29,10 @@ const About = () => {
 
   return (
     <section
-      id="about"
-      className="min-h-screen bg-black text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8"
-    >
+  id="about"
+  className="min-h-screen bg-black text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8 overflow-x-hidden"
+>
+
       {/* Left Side: Image */}
       <motion.div
         ref={refImage}
